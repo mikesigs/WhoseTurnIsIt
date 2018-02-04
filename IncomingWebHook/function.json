@@ -1,11 +1,12 @@
 {
-  "disabled": false,
   "bindings": [
     {
       "name": "req",
       "type": "httpTrigger",
       "direction": "in",
-      "webHookType": "genericJson"      
+      "webHookType": "genericJson",
+      "authLevel": "anonymous",
+      "route": ""
     },
     {
       "name": "res",
