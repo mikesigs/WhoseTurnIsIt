@@ -67,6 +67,10 @@ Target "Build" (fun _ ->
     )
 )
 
+Target "Publish" (fun _ -> runDotnet "./src/" "publish")
+
+Target "Run" (fun _ -> run "C:/Program Files/nodejs/func.cmd" "host start" "./src/")
+
 // --------------------------------------------------------------------------------------
 // Build order
 // --------------------------------------------------------------------------------------
@@ -75,5 +79,6 @@ Target "Build" (fun _ ->
   //==> "InstallDotNetCLI"
   ==> "Restore"
   ==> "Build"
+  ==> "Publish"
 
 RunTargetOrDefault "Build"

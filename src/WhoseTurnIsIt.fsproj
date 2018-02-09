@@ -20,10 +20,10 @@
   </ItemGroup>
   
   <ItemGroup>
-    <Compile Include="WhoseTurnIsIt.fs" />
-    <Compile Include="DialogFlow/DialogFlow.fs" />
+    <!-- <Compile Include="WhoseTurnIsIt.fs" /> -->
+    <!-- <Compile Include="DialogFlow/DialogFlow.fs" /> -->
     <Compile Include="IncomingWebHook/run.fs" />
-    <None Include="Script.fsx" />
+    <!-- <None Include="Script.fsx" /> -->
   </ItemGroup>
 
   <Import Project="..\.paket\Paket.Restore.targets" />

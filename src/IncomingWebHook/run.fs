@@ -6,7 +6,6 @@ module IncomingWebHook =
     open System.Net.Http
     open Newtonsoft.Json
     open Microsoft.Azure.WebJobs.Host
-    open DialogFlow
 
     type Name = {
         First: string
@@ -16,9 +15,6 @@ module IncomingWebHook =
     type Greeting = {
         Greeting: string
     }
-
-    let Foo (x: DialogFlowRequest) = 
-        let y = {x with }
 
     let Run(req: HttpRequestMessage, log: TraceWriter) =
         async {
