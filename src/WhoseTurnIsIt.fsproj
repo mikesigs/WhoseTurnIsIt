@@ -8,7 +8,7 @@
   </PropertyGroup>
   
   <ItemGroup>
-    <Content Include="IncomingWebHook/function.json">
+    <Content Include="WhoPickedWhat/function.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="host.json">
@@ -21,7 +21,7 @@
   
   <ItemGroup>
     <Compile Include="Model/Model.fs" />
-    <Compile Include="IncomingWebHook/run.fs" />
+    <Compile Include="WhoPickedWhat/run.fs" />
   </ItemGroup>
 
   <Import Project="..\.paket\Paket.Restore.targets" />

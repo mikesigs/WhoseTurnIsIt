@@ -15,5 +15,5 @@
     }
   ],  
   "scriptFile": "../bin/Debug/net461/bin/WhoseTurnIsIt.dll",
-  "entryPoint": "WhoseTurnIsIt.IncomingWebHook.Run"
+  "entryPoint": "WhoseTurnIsIt.WhoPickedWhat.Run"
 }

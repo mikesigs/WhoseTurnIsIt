@@ -2,7 +2,7 @@ namespace WhoseTurnIsIt
 
 open Newtonsoft.Json
 open System.Text
-module IncomingWebHook =
+module WhoPickedWhat =
 
     open System.Net
     open System.Net.Http
