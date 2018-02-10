@@ -7,9 +7,6 @@
         "label": "build",
         "command": "dotnet build",
         "type": "shell",
-        "presentation": {
-          "reveal": "silent"
-        },
         "problemMatcher": "$msCompile",
         "options": {
           "cwd": "./src"
@@ -47,20 +44,17 @@
       {
         "label": "Publish (w/FAKE)",
         "command": "./build.cmd publish",
-        "type": "shell",
-        "group": {
-          "kind": "build",
-          "isDefault": true
-        }
+        "type": "shell"
       },
       {
         "label": "Run (w/FAKE)",
         "command": "./build.cmd run",
-        "type": "shell",
-        "group": {
-          "kind": "build",
-          "isDefault": true
-        }
+        "type": "shell"
+      },
+      {
+        "label": "Publish (w/FAKE)",
+        "command": "./build.cmd publish",
+        "type": "shell"
       }
     ]
   }

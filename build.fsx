@@ -12,9 +12,12 @@ open System
 // --------------------------------------------------------------------------------------
 
 let buildDir  = "./build/"
+let srcDir = "./src/"
 let appReferences = !! "/**/*.fsproj"
 let dotnetcliVersion = "2.0.2"
 let mutable dotnetExePath = "dotnet"
+let funcPath = "C:/Program Files/nodejs/func.cmd"
+
 
 // --------------------------------------------------------------------------------------
 // Helpers
@@ -67,18 +70,32 @@ Target "Build" (fun _ ->
     )
 )
 
-Target "Publish" (fun _ -> runDotnet "./src/" "publish")
+Target "Publish" (fun _ -> 
+    runDotnet srcDir "publish"
+)
 
-Target "Run" (fun _ -> run "C:/Program Files/nodejs/func.cmd" "host start" "./src/")
+Target "Deploy" (fun _ ->
+    run funcPath "azure functionapp publish mikesigs-whoseturnisit" srcDir
+)
+
+Target "Run" (fun _ -> 
+    run funcPath "host start" srcDir
+)
 
 // --------------------------------------------------------------------------------------
 // Build order
 // --------------------------------------------------------------------------------------
 
 "Clean"
-  //==> "InstallDotNetCLI"
-  ==> "Restore"
-  ==> "Build"
-  ==> "Publish"
+    //==> "InstallDotNetCLI"
+    ==> "Restore"
+    ==> "Build"
+
+"Build"    
+    ==> "Publish"
+    ==> "Deploy"
+
+"Build"
+    ==> "Run"
 
 RunTargetOrDefault "Build"
