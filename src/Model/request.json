@@ -1,0 +1,179 @@
+{
+  "originalRequest": {
+    "source": "google",
+    "version": "2",
+    "data": {
+      "isInSandbox": true,
+      "surface": {
+        "capabilities": [
+          { "name": "actions.capability.SCREEN_OUTPUT" },
+          { "name": "actions.capability.AUDIO_OUTPUT" },
+          { "name": "actions.capability.WEB_BROWSER" },
+          { "name": "actions.capability.MEDIA_RESPONSE_AUDIO" }
+        ]
+      },
+      "inputs": [
+        {
+          "rawInputs": [
+            { "query": "Mike picked the movie Weeds", "inputType": "VOICE" }
+          ],
+          "arguments": [
+            {
+              "rawText": "Mike picked the movie Weeds",
+              "textValue": "Mike picked the movie Weeds",
+              "name": "text"
+            }
+          ],
+          "intent": "actions.intent.TEXT"
+        }
+      ],
+      "user": {
+        "lastSeen": "2018-02-10T05:35:30Z",
+        "locale": "en-US",
+        "userId":
+          "ABwppHHYYQNHJ6jIMZ-wLzgF0csGRgVd2q6mmvW4IJVQ77q2a7FIGMQW7qPDF4IhPlbzrIHN4W_ZcIveO0NvIyf5MQ"
+      },
+      "conversation": {
+        "conversationId": "1518241349487",
+        "type": "ACTIVE",
+        "conversationToken": "[]"
+      },
+      "availableSurfaces": [
+        {
+          "capabilities": [
+            { "name": "actions.capability.AUDIO_OUTPUT" },
+            { "name": "actions.capability.SCREEN_OUTPUT" }
+          ]
+        }
+      ]
+    }
+  },
+  "id": "05fead99-046e-4cfe-885d-6ce0c4464e7a",
+  "timestamp": "2018-02-10T05:42:43.606Z",
+  "lang": "en-us",
+  "result": {
+    "source": "agent",
+    "resolvedQuery": "Mike picked the movie Weeds",
+    "speech": "",
+    "action": "",
+    "actionIncomplete": false,
+    "parameters": {
+      "thingType": "Movie",
+      "thingDescription": "Weeds",
+      "whoPicked": "Mike"
+    },
+    "contexts": [
+      {
+        "name": "actions_capability_screen_output",
+        "parameters": {
+          "thingDescription": "Weeds",
+          "thingType.original": "movie",
+          "givenName": "Mike",
+          "thingDescription.original": "Weeds",
+          "thingType": "Movie",
+          "givenName.original": "Mike"
+        },
+        "lifespan": 0
+      },
+      {
+        "name": "google_assistant_input_type_voice",
+        "parameters": {
+          "thingDescription": "Weeds",
+          "thingType.original": "movie",
+          "givenName": "Mike",
+          "thingDescription.original": "Weeds",
+          "thingType": "Movie",
+          "givenName.original": "Mike"
+        },
+        "lifespan": 0
+      },
+      {
+        "name": "actions_capability_audio_output",
+        "parameters": {
+          "thingDescription": "Weeds",
+          "thingType.original": "movie",
+          "givenName": "Mike",
+          "thingDescription.original": "Weeds",
+          "thingType": "Movie",
+          "givenName.original": "Mike"
+        },
+        "lifespan": 0
+      },
+      {
+        "name": "actions_capability_media_response_audio",
+        "parameters": {
+          "thingDescription": "Weeds",
+          "thingType.original": "movie",
+          "givenName": "Mike",
+          "thingDescription.original": "Weeds",
+          "thingType": "Movie",
+          "givenName.original": "Mike"
+        },
+        "lifespan": 0
+      },
+      {
+        "name": "actions_capability_web_browser",
+        "parameters": {
+          "thingDescription": "Weeds",
+          "thingType.original": "movie",
+          "givenName": "Mike",
+          "thingDescription.original": "Weeds",
+          "thingType": "Movie",
+          "givenName.original": "Mike"
+        },
+        "lifespan": 0
+      }
+    ],
+    "metadata": {
+      "matchedParameters": [
+        {
+          "required": true,
+          "dataType": "@sys.given-name",
+          "name": "givenName",
+          "value": "$givenName",
+          "prompts": [{ "lang": "en", "value": "Who picked this time?" }],
+          "isList": false
+        },
+        {
+          "required": true,
+          "dataType": "@thing-type",
+          "name": "thingType",
+          "value": "$thingType",
+          "prompts": [
+            { "lang": "en", "value": "Is this a movie, game, or restaurant?" }
+          ],
+          "isList": false
+        },
+        {
+          "required": true,
+          "dataType": "@sys.any",
+          "name": "thingDescription",
+          "value": "$thingDescription",
+          "prompts": [
+            { "lang": "en", "value": "What was the $thingType called again?" }
+          ],
+          "isList": false
+        }
+      ],
+      "intentName": "Who Picked What",
+      "intentId": "55a51125-f1fc-4396-b32b-433e0bb4dd08",
+      "webhookUsed": "true",
+      "webhookForSlotFillingUsed": "false",
+      "nluResponseTime": 36
+    },
+    "fulfillment": {
+      "speech":
+        "Cool. I\u0027ll remember that Mike picked Weeds the next time you guys are arguing about whose turn it is to pick the Movie.",
+      "messages": [
+        {
+          "type": 0,
+          "speech":
+            "Cool. I\u0027ll remember that Mike picked Weeds the next time you guys are arguing about whose turn it is to pick the Movie."
+        }
+      ]
+    },
+    "score": 1.0
+  },
+  "status": { "code": 200, "errorType": "success", "webhookTimedOut": false },
+  "sessionId": "1518241349487"
+}

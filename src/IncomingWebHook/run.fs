@@ -1,34 +1,37 @@
 namespace WhoseTurnIsIt
 
+open Newtonsoft.Json
+open System.Text
 module IncomingWebHook =
 
     open System.Net
     open System.Net.Http
-    open Newtonsoft.Json
     open Microsoft.Azure.WebJobs.Host
+    open Model
 
-    type Name = {
-        First: string
-        Last: string
-    }
-
-    type Greeting = {
-        Greeting: string
-    }
+    let jsonResponse response =
+        let httpResponse = new HttpResponseMessage(HttpStatusCode.OK)
+        httpResponse.Content <- new StringContent(JsonConvert.SerializeObject(response), Encoding.UTF8, "application/json")
+        httpResponse
 
     let Run(req: HttpRequestMessage, log: TraceWriter) =
         async {
-            log.Info("Webhook was triggered yay!")
-            let! jsonContent = req.Content.ReadAsStringAsync() |> Async.AwaitTask
-            log.Info jsonContent
             try
-                let name = JsonConvert.DeserializeObject<Name>(jsonContent)
-                log.Info (sprintf "%A" name)
-                let greeting = { Greeting = (sprintf "Hello %s %s!" name.First name.Last ) }
-                log.Info (sprintf "%A" greeting)
-                return req.CreateResponse(HttpStatusCode.OK, greeting)
+                let! json = req.Content.ReadAsStringAsync() |> Async.AwaitTask
+                let request = JsonConvert.DeserializeObject<WhoPickedWhatRequest>(json)
+
+                log.Info (sprintf "Request: %A" request)
+
+                let message = (sprintf "Thanks %s! I'll remember that you picked the %s last time." request.result.parameters.whoPicked request.result.parameters.thingType )
+                let response = {
+                    speech = message;
+                    displayText = message;
+                    source = "webhook" }
+                log.Info (sprintf "Response: %A" response)
+
+                return jsonResponse response
             with ex ->
-                log.Error (ex.Message)
-                return req.CreateResponse(HttpStatusCode.BadRequest)
+                log.Error (ex.ToString())
+                return req.CreateResponse(HttpStatusCode.BadRequest, ex.Message)
         } |> Async.StartAsTask
 

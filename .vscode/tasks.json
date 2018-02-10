@@ -39,22 +39,26 @@
         "group": {
           "kind": "build",
           "isDefault": true
-        }
+        },
+        "problemMatcher": "$msCompile"        
       },
       {
         "label": "Publish (w/FAKE)",
         "command": "./build.cmd publish",
-        "type": "shell"
+        "type": "shell",
+        "problemMatcher": []
       },
       {
         "label": "Run (w/FAKE)",
         "command": "./build.cmd run",
-        "type": "shell"
+        "type": "shell",
+        "problemMatcher": []
       },
       {
-        "label": "Publish (w/FAKE)",
-        "command": "./build.cmd publish",
-        "type": "shell"
+        "label": "Deploy (w/FAKE)",
+        "command": "./build.cmd deploy",
+        "type": "shell",
+        "problemMatcher": []
       }
     ]
   }

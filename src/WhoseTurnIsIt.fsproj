@@ -20,7 +20,7 @@
   </ItemGroup>
   
   <ItemGroup>
-    <!-- <Compile Include="DialogFlow/DialogFlow.fs" /> -->
+    <Compile Include="Model/Model.fs" />
     <Compile Include="IncomingWebHook/run.fs" />
   </ItemGroup>
 
