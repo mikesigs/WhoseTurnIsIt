@@ -1,8 +1,12 @@
 RESTRICTION: >= net461
 NUGET
   remote: https://www.nuget.org/api/v2
+    Dynamitey (1.0.2)
     FSharp.Core (4.3.3)
     FSharp.Data (2.4.4)
+    FSharp.Interop.Dynamic (3.0)
+      Dynamitey (>= 1.0.2)
+      FSharp.Core (>= 3.1.2.1)
     Microsoft.AspNet.WebApi.Client (5.2.3)
       Newtonsoft.Json (>= 6.0.4)
     Microsoft.AspNet.WebApi.Core (5.2.3)

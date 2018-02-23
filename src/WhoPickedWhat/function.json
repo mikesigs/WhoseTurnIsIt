@@ -9,9 +9,18 @@
       "name": "req"
     },
     {
+      "name": "pickDocument",
+      "type": "documentDB",
+      "databaseName": "WhoseTurnIsIt",
+      "collectionName": "pickCollection",
+      "createIfNotExists": true,
+      "connection": "WhoseTurnIsIt_CosmosDb",
+      "direction": "out"
+    },
+    {
+      "name": "res",
       "type": "http",
-      "direction": "out",
-      "name": "res"
+      "direction": "out"
     }
   ],  
   "scriptFile": "../bin/Debug/net461/bin/WhoseTurnIsIt.dll",

@@ -1,3 +1,4 @@
 FSharp.Core
 FSharp.Data
+FSharp.Interop.Dynamic
 Microsoft.NET.Sdk.Functions

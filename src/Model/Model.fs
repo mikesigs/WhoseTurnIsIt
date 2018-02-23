@@ -1,6 +1,5 @@
 namespace WhoseTurnIsIt
 
-open Newtonsoft.Json.Serialization
 module Model =
 
     type User = {
