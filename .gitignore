@@ -5,6 +5,7 @@ csx
 .vs
 edge
 Publish
+.fake/
 
 *.user
 *.suo
